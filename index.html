@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="container mx-auto p-4">
+    <h1 class="text-3xl font-bold mb-6 text-center">Finance Calculator Suite</h1>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- SIP Calculator -->
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold mb-4">SIP Calculator</h2>
+        <label>Monthly Investment (₹): <input type="number" id="sip-monthly" class="input" /></label><br>
+        <label>Years: <input type="number" id="sip-years" class="input" /></label><br>
+        <label>Expected Return Rate (%): <input type="number" id="sip-rate" class="input" /></label><br>
+        <button onclick="calculateSIP()" class="bg-blue-600 text-white px-4 py-2 mt-2 rounded">Calculate</button>
+        <p id="sip-result" class="mt-2 font-medium"></p>
+        <canvas id="sip-chart" class="mt-4"></canvas>
+      </div>
+
+      <!-- Home Loan EMI Calculator -->
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h2 class="text-xl font-semibold mb-4">Home Loan EMI Calculator</h2>
+        <label>Loan Amount (₹): <input type="number" id="loan-amount" class="input" /></label><br>
+        <label>Loan Tenure (Years): <input type="number" id="loan-years" class="input" /></label><br>
+        <label>Interest Rate (% p.a.): <input type="number" id="loan-rate" class="input" /></label><br>
+        <button onclick="calculateEMI()" class="bg-green-600 text-white px-4 py-2 mt-2 rounded">Calculate</button>
+        <p id="loan-result" class="mt-2 font-medium"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script/script.js"></script>
+
+  <style>
+    .input {
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+    }
+  </style>
+</body>
+</html>
